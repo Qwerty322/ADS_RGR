@@ -12,6 +12,7 @@ class SecondTask {
     vector<int> vertex;
     vector<int> total;
     int min, index;
+    bool hasWeight = false;
     const int INF = 10000000;
 
     int maxInVector() {
@@ -24,6 +25,7 @@ class SecondTask {
 
     int minInVector() {
         min = total[0];
+        index = 0;
         for (int i = 1; i < vertex.size(); ++i) {
             if (total[i] < min) {
                 min = total[i];
@@ -44,6 +46,10 @@ class SecondTask {
             for (int u = 0; u < graph->getVertexCount(); ++u) {
                 for (int v = 0; v < graph->getVertexCount(); ++v) {
                     if (graph->hasEdge(u, v)) {
+                        if (!hasWeight) {
+                            hasWeight = graph->getEdge(u, v)->hasWeight();
+                            if (!hasWeight) return;
+                        }
                         if (vertex[v] > vertex[u] + graph->getEdge(u, v)->getWeight()) {
                             vertex[v] = vertex[u] + graph->getEdge(u, v)->getWeight();
 
@@ -96,15 +102,20 @@ public:
     }
 
     void result() {
-        if (!min) {
+        if (!hasWeight) {
             cout << "Граф не является взвешенным! Укажите веса.\n";
             return;
         }
         if (min != INF) {
             cout << "Центр взвешенного орграфа: (i" << index << ")\n";
+            cout << "Эксцентриситеты графа:\n";
+            for (int i = 0; i < graph->getVertexCount(); ++i) {
+                cout << "("<< i << ") = " << total[i] << endl;
+            }
         } else {
             cout << "Центр взвешенного орграфа не найден!\n";
         }
+
     }
 
 };

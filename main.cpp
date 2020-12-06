@@ -376,7 +376,7 @@ void secondTaskMenu(Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, in
 int main() {
     srand(time(0));
     auto *graph =
-            new Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>>(5, 10, true, true);
+            new Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>>(5, 4, true, true);
     MapVertex<string, Vertex<string, int> *> mapVertex;
     setlocale(LC_ALL, "rus");
     bool exit = true;
