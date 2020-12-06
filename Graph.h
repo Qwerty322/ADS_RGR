@@ -10,7 +10,6 @@ using namespace std;
 //АТД простой граф
 template<class Vertex, class Edge>
 class Graph {
-    friend class VertexIterator;  //дружественный класс
     vector<Vertex *> vertexVector;//Вектор вставленных
     GraphForm<Edge> *data;       //Данные графа
     bool directed;                //Ориентация графа

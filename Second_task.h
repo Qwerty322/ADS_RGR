@@ -58,11 +58,6 @@ class SecondTask {
                 }
             }
         }
-
-//        for (int i = 0; i < graph->getVertexCount(); i++)
-//            if (vertex[i] == INF)
-//                cout << endl << s << "->" << i << "=" << "INF";
-//            else cout << endl << s << "->" << i << "=" << vertex[i];
     }
 
 public:
@@ -110,7 +105,7 @@ public:
             cout << "Центр взвешенного орграфа: (i" << index << ")\n";
             cout << "Эксцентриситеты графа:\n";
             for (int i = 0; i < graph->getVertexCount(); ++i) {
-                cout << "("<< i << ") = " << total[i] << endl;
+                cout << "(" << i << ") = " << total[i] << endl;
             }
         } else {
             cout << "Центр взвешенного орграфа не найден!\n";

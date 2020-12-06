@@ -1,10 +1,12 @@
 #ifndef ADS_RGR_FIRST_TASK_H
 #define ADS_RGR_FIRST_TASK_H
+
 #include "Graph.h"
 #include <vector>
+
 using namespace std;
 
-template <class Vertex, class Edge>
+template<class Vertex, class Edge>
 class FirstTask {
     Graph<Vertex, Edge> *graph;
     vector<bool> visited;
@@ -33,9 +35,10 @@ class FirstTask {
         path.pop_back();
         return false;
     }
+
 public:
 
-    FirstTask(Graph<Vertex, Edge> *g): graph(g) {
+    FirstTask(Graph<Vertex, Edge> *g) : graph(g) {
         visited.resize(graph->getVertexCount());
         path.resize(graph->getVertexCount());
         restart();
@@ -48,7 +51,7 @@ public:
         restart();
     }
 
-     ~FirstTask() {
+    ~FirstTask() {
         visited.clear();
         path.clear();
     }
@@ -84,4 +87,5 @@ public:
     }
 
 };
+
 #endif //ADS_RGR_FIRST_TASK_H

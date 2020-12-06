@@ -5,9 +5,7 @@
 #include "Edge.h"
 #include "First_task.h"
 #include "Second_task.h"
-#include "Graph_forms.h"
-#include <string>
-#include <iomanip>
+
 
 using namespace std;
 
@@ -346,6 +344,7 @@ void firstTaskMenu(Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int
         }
     }
 }
+
 //
 void secondTaskMenu(Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>> *graph) {
     SecondTask<Vertex<string, int>, Edge<Vertex<string, int>, int, int>> secondTask(graph);
