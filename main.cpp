@@ -3,6 +3,7 @@
 #include "Vertex_map.h"
 #include "Vertex.h"
 #include "Edge.h"
+#include "First_task.h"
 #include "Graph_forms.h"
 #include <string>
 #include <iomanip>
@@ -319,32 +320,31 @@ void outputEdgeIteratorMenu(Graph<Vertex<string, int>, Edge<Vertex<string, int>,
     }
 }
 
-//void taskOneMenu(Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>> *graph) {
-//    //taskOneMenu
-//    cout << "\nменю первого задания"
-//         << "\n1 restart"
-//         << "\n2 result"
-//         << "\n3 выход"
-//         << "\n";
-//
-//    TaskOne <Vertex<string, int>, Edge<Vertex<string, int>, int, int>> taskOne(graph);
-//
-//    int key;
-//    while (true) {
-//        cin >> key;
-//        switch (key) {
-//            case 1:
-//                taskOne.restart();
-//                break;
-//            case 2:
-//                cout << "\n" << taskOne.getResult() << "\n";
-//                break;
-//            case 3:
-//                return;
-//
-//        }
-//    }
-//}
+void firstTaskMenu(Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>> *graph) {
+
+    FirstTask<Vertex<string, int>, Edge<Vertex<string, int>, int, int>> firstTask(graph);
+
+    int key;
+    while (true) {
+        cout << "__Меню первого задания__\n"
+             << "1) Рестарт              |\n"
+             << "2) Результат            |\n"
+             << "0) Выход                |\n"
+             << "------------------------\n"
+             << "Ввод: ";
+        cin >> key;
+        switch (key) {
+            case 1:
+                firstTask.restart();
+                break;
+            case 2:
+                firstTask.result();
+                break;
+            case 0:
+                return;
+        }
+    }
+}
 //
 //void taskTwoMenu(Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>> *graph) {
 //    cout << "введите d";
@@ -418,7 +418,7 @@ void outputEdgeIteratorMenu(Graph<Vertex<string, int>, Edge<Vertex<string, int>,
 int main() {
     srand(time(0));
     auto *graph =
-            new Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>>(6, 10, false, false);
+            new Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>>(5, 12, true, true);
     MapVertex<string, Vertex<string, int> *> mapVertex;
     setlocale(LC_ALL, "rus");
     bool exit = true;
@@ -627,9 +627,9 @@ int main() {
                 outputEdgeIteratorMenu(graph);
                 break;
 
-//            case 21:
-//                taskOneMenu(graph);
-//                break;
+            case 21:
+                firstTaskMenu(graph);
+                break;
 //
 //            case 22:
 //                taskTwoMenu(graph);

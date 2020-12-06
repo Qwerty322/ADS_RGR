@@ -10,6 +10,14 @@
 iostream
 -
 
+/Users/Vlad/CLionProjects/ADS_RGR/First_task.h
+Graph.h
+/Users/Vlad/CLionProjects/ADS_RGR/Graph.h
+vector
+-
+queue
+-
+
 /Users/Vlad/CLionProjects/ADS_RGR/Graph.h
 iostream
 -
@@ -45,6 +53,8 @@ Vertex.h
 /Users/Vlad/CLionProjects/ADS_RGR/Vertex.h
 Edge.h
 /Users/Vlad/CLionProjects/ADS_RGR/Edge.h
+First_task.h
+/Users/Vlad/CLionProjects/ADS_RGR/First_task.h
 Graph_forms.h
 /Users/Vlad/CLionProjects/ADS_RGR/Graph_forms.h
 string
