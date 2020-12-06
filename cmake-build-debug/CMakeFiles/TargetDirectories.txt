@@ -1,0 +1,3 @@
+/Users/Vlad/CLionProjects/ADS_RGR/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Vlad/CLionProjects/ADS_RGR/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Vlad/CLionProjects/ADS_RGR/cmake-build-debug/CMakeFiles/ADS_RGR.dir
