@@ -2,7 +2,6 @@
 #define ADS_RGR_FIRST_TASK_H
 #include "Graph.h"
 #include <vector>
-#include <queue>
 using namespace std;
 
 template <class Vertex, class Edge>
@@ -74,13 +73,13 @@ public:
 
     void result() {
         if (res) {
-            cout << "Цикл найден!\n";
+            cout << "Гамильтонов цикл найден!\n";
             for (int i = 0; i < graph->getVertexCount(); ++i) {
                 cout << path[i] << " -> ";
             }
             cout << path[0] << endl;
         } else {
-            cout << "Цикл не найден!\n";
+            cout << "Гамильтонов цикл не найден!\n";
         }
     }
 

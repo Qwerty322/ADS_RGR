@@ -5,6 +5,7 @@ CMakeFiles/ADS_RGR.dir/main.cpp.o: ../Edge.h
 CMakeFiles/ADS_RGR.dir/main.cpp.o: ../First_task.h
 CMakeFiles/ADS_RGR.dir/main.cpp.o: ../Graph.h
 CMakeFiles/ADS_RGR.dir/main.cpp.o: ../Graph_forms.h
+CMakeFiles/ADS_RGR.dir/main.cpp.o: ../Second_task.h
 CMakeFiles/ADS_RGR.dir/main.cpp.o: ../Vertex.h
 CMakeFiles/ADS_RGR.dir/main.cpp.o: ../Vertex_map.h
 CMakeFiles/ADS_RGR.dir/main.cpp.o: ../main.cpp

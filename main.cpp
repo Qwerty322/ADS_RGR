@@ -4,6 +4,7 @@
 #include "Vertex.h"
 #include "Edge.h"
 #include "First_task.h"
+#include "Second_task.h"
 #include "Graph_forms.h"
 #include <string>
 #include <iomanip>
@@ -346,79 +347,36 @@ void firstTaskMenu(Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int
     }
 }
 //
-//void taskTwoMenu(Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>> *graph) {
-//    cout << "введите d";
-//    int d;
-//    cin >> d;
-//    //taskOneMenu edge iterator
-//    cout << "\nменю второго задания"
-//         << "\n1 restart"
-//         << "\n2 новое d"
-//         << "\n3 result"
-//         << "\n4 выход"
-//         << "\n";
-//
-//    TaskTwo <Vertex<string, int>, Edge<Vertex<string, int>, int, int>> taskTwo(graph, d);
-//
-//    int key;
-//    while (true) {
-//        cin >> key;
-//        switch (key) {
-//            case 1:
-//                taskTwo.restart();
-//                break;
-//            case 2: {
-//                cout << "\nвведите новое d" << "\n";
-//                cin >> d;
-//                taskTwo.setD(d);
-//            }
-//
-//                break;
-//            case 3: {
-//                vector<vector<bool>> result = taskTwo.getResult();
-//
-//                //выводим заголовок
-//                cout << setw(6) << "";
-//                for (int i = 0; i < graph->getVertexCount(); i++) {
-//                    if (graph->getVertex(i)->isNameSet() == true)
-//                        cout << setw(6) << graph->getVertex(i)->getName();
-//                    else
-//                        cout << setw(6) << "ind " << i;
-//                }
-//                cout << "\n\n\n";
-//
-//                for (int i = 0; i < graph->getVertexCount(); i++) {
-//                    if (graph->getVertex(i)->isNameSet() == true)
-//                        cout << setw(6) << graph->getVertex(i)->getName();
-//                    else
-//                        cout << setw(6) << "ind " << i;
-//
-//                    for (int j = 0; j < graph->getVertexCount(); j++) {
-//                        if (result[i][j]) {
-//                            if (graph->getEdge(i, j)->isWeightSet())
-//                                cout << setw(6) << graph->getEdge(i, j)->getWeight();
-//                            else
-//                                cout << setw(6) << "+ ";
-//                        } else
-//                            cout << setw(6) << "- ";
-//                    }
-//                    cout << "\n\n\n";
-//                }
-//
-//            }
-//                break;
-//            case 4:
-//                return;
-//
-//        }
-//    }
-//}
+void secondTaskMenu(Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>> *graph) {
+    SecondTask<Vertex<string, int>, Edge<Vertex<string, int>, int, int>> secondTask(graph);
+
+    int key;
+    while (true) {
+        cout << "__Меню второго задания__\n"
+             << "1) Рестарт              |\n"
+             << "2) Результат            |\n"
+             << "0) Выход                |\n"
+             << "------------------------\n"
+             << "Ввод: ";
+        cin >> key;
+        switch (key) {
+            case 1:
+                secondTask.restart();
+                break;
+            case 2:
+                secondTask.result();
+                break;
+            case 0:
+                return;
+        }
+    }
+}
 
 
 int main() {
     srand(time(0));
     auto *graph =
-            new Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>>(5, 12, true, true);
+            new Graph<Vertex<string, int>, Edge<Vertex<string, int>, int, int>>(5, 10, true, true);
     MapVertex<string, Vertex<string, int> *> mapVertex;
     setlocale(LC_ALL, "rus");
     bool exit = true;
@@ -630,10 +588,10 @@ int main() {
             case 21:
                 firstTaskMenu(graph);
                 break;
-//
-//            case 22:
-//                taskTwoMenu(graph);
-//                break;
+
+            case 22:
+                secondTaskMenu(graph);
+                break;
 
 
         }
