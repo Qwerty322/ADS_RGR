@@ -10,36 +10,47 @@ class MapVertex {
     map<Name, Data> mapVertex;
 
 public:
-    //если второе имя не занято то делаем замену
-    bool replaceName(Name name1, Name name2) {
-        if (mapVertex.find(name2) == mapVertex.end()) {
-            Data data = mapVertex[name1];
-            mapVertex.erase(name1);
-            mapVertex[name2] = data;
-            return true;
-        }
-        return false;
-    }
+    bool replaceName(Name name1, Name name2);
 
-    bool addPair(Name name, Data data) {
-        if (mapVertex.find(name) == mapVertex.end()) {
-            mapVertex[name] = data;
-            return true;
-        }
-        return false;
-    }
+    bool addPair(Name name, Data data);
 
-    Data getData(Name name) {
-        if (mapVertex.find(name) != mapVertex.end())
-            return mapVertex[name];
-        else
-            throw runtime_error("EXCEPTION!");
-    }
+    Data getData(Name name);
 
-    bool delPair(Name name) {
-        return mapVertex.erase(name) == 1;
-    }
+    bool delPair(Name name);
 };
+
+template<class Name, class Data>
+bool MapVertex<Name, Data>::replaceName(Name name1, Name name2) {
+    if (mapVertex.find(name2) == mapVertex.end()) {
+        Data data = mapVertex[name1];
+        mapVertex.erase(name1);
+        mapVertex[name2] = data;
+        return true;
+    }
+    return false;
+}
+
+template<class Name, class Data>
+bool MapVertex<Name, Data>::addPair(Name name, Data data) {
+    if (mapVertex.find(name) == mapVertex.end()) {
+        mapVertex[name] = data;
+        return true;
+    }
+    return false;
+}
+
+template<class Name, class Data>
+Data MapVertex<Name, Data>::getData(Name name) {
+    if (mapVertex.find(name) != mapVertex.end())
+        return mapVertex[name];
+    else
+        throw runtime_error("EXCEPTION!");
+}
+
+template<class Name, class Data>
+bool MapVertex<Name, Data>::delPair(Name name) {
+    return mapVertex.erase(name) == 1;
+}
 
 
 #endif //ADS_RGR_VERTEX_MAP_H

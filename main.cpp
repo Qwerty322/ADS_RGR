@@ -591,8 +591,6 @@ int main() {
             case 22:
                 secondTaskMenu(graph);
                 break;
-
-
         }
     }
     return 0;

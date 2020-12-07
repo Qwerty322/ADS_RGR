@@ -2,9 +2,8 @@
 #define ADS_RGR_EDGE_H
 
 #include <iostream>
+
 using namespace std;
-
-
 
 //АТД «Дескриптор ребра графа»
 template<class Vertex, class Weight, class Data>
@@ -36,40 +35,64 @@ public:
             isWeight(true),
             isData(true) {}
 
-    void setWeight(Weight weight) {
-        this->weight = weight;
-        isWeight = true;
-    }
+    void setWeight(Weight weight);
 
-    void setData(Data data) {
-        this->data = data;
-        isData = true;
-    }
+    void setData(Data data);
 
-    Weight getWeight() {
-        return weight;
-    }
+    Weight getWeight();
 
-    Data getData() {
-        return data;
-    }
+    Data getData();
 
-    Vertex *getVertex1() {
-        return v1;
-    };
+    Vertex *getVertex1();
 
-    Vertex *getVertex2() {
-        return v2;
-    };
+    Vertex *getVertex2();
 
-    bool hasWeight() {
-        return isWeight;
-    }
+    bool hasWeight();
 
-    bool hasData() {
-        return isData;
-    }
+    bool hasData();
 };
+
+template<class Vertex, class Weight, class Data>
+void Edge<Vertex, Weight, Data>::setWeight(Weight weight) {
+    this->weight = weight;
+    isWeight = true;
+}
+
+template<class Vertex, class Weight, class Data>
+void Edge<Vertex, Weight, Data>::setData(Data data) {
+    this->data = data;
+    isData = true;
+}
+
+template<class Vertex, class Weight, class Data>
+Weight Edge<Vertex, Weight, Data>::getWeight() {
+    return weight;
+}
+
+template<class Vertex, class Weight, class Data>
+Data Edge<Vertex, Weight, Data>::getData() {
+    return data;
+}
+
+template<class Vertex, class Weight, class Data>
+Vertex *Edge<Vertex, Weight, Data>::getVertex1() {
+    return v1;
+}
+
+template<class Vertex, class Weight, class Data>
+Vertex *Edge<Vertex, Weight, Data>::getVertex2() {
+    return v2;
+}
+
+template<class Vertex, class Weight, class Data>
+bool Edge<Vertex, Weight, Data>::hasWeight() {
+    return isWeight;
+}
+
+template<class Vertex, class Weight, class Data>
+bool Edge<Vertex, Weight, Data>::hasData() {
+    return isData;
+}
 
 
 #endif //ADS_RGR_EDGE_H
