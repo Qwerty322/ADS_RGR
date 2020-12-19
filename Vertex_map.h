@@ -24,6 +24,7 @@ bool MapVertex<Name, Data>::replaceName(Name name1, Name name2) {
     if (mapVertex.find(name2) == mapVertex.end()) {
         Data data = mapVertex[name1];
         mapVertex.erase(name1);
+        data->setName(name2);
         mapVertex[name2] = data;
         return true;
     }
@@ -33,6 +34,7 @@ bool MapVertex<Name, Data>::replaceName(Name name1, Name name2) {
 template<class Name, class Data>
 bool MapVertex<Name, Data>::addPair(Name name, Data data) {
     if (mapVertex.find(name) == mapVertex.end()) {
+        data->setName(name);
         mapVertex[name] = data;
         return true;
     }

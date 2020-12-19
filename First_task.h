@@ -26,7 +26,7 @@ public:
 
     void restart();
 
-    void result();
+    vector<int> result();
 
 };
 
@@ -99,15 +99,17 @@ void FirstTask<Vertex, Edge>::restart() {
 }
 
 template<class Vertex, class Edge>
-void FirstTask<Vertex, Edge>::result() {
+vector<int> FirstTask<Vertex, Edge>::result() {
     if (res) {
-        cout << "Гамильтонов цикл найден!\n";
+        cout << "Hamiltonian cycle found!\n";
         for (int i = 0; i < graph->getVertexCount(); ++i) {
             cout << path[i] << " -> ";
         }
         cout << path[0] << endl;
+        return path;
     } else {
-        cout << "Гамильтонов цикл не найден!\n";
+        cout << "Hamiltonian cycle not found!\n";
+        return path;
     }
 }
 

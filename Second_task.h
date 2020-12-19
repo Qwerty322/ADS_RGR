@@ -32,7 +32,7 @@ public:
 
     void restart();
 
-    void result();
+    int result();
 
 };
 
@@ -123,19 +123,20 @@ void SecondTask<Vertex, Edge>::restart() {
 }
 
 template<class Vertex, class Edge>
-void SecondTask<Vertex, Edge>::result() {
+int SecondTask<Vertex, Edge>::result() {
     if (!hasWeight) {
-        cout << "Граф не является взвешенным! Укажите веса.\n";
-        return;
+        cout << "The graph is not weighted! Indicate weights.\n";
+        return -1;
     }
     if (min != INF) {
-        cout << "Центр взвешенного орграфа: (i" << index << ")\n";
-        cout << "Эксцентриситеты графа:\n";
+        cout << "Weighted Digraph Center: (i" << index << ")\n";
+        cout << "Graph eccentricities:\n";
         for (int i = 0; i < graph->getVertexCount(); ++i) {
             cout << "(" << i << ") = " << total[i] << endl;
         }
+        return index;
     } else {
-        cout << "Центр взвешенного орграфа не найден!\n";
+        cout << "Weighted digraph center not found!\n";
     }
 }
 
